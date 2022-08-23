@@ -175,7 +175,7 @@ export const deployContract = async () => {
                          Manager : acc,
                          minimumForTicket : reach.parseCurrency(10),
                          weeklyPercent : reach.parseCurrency(0.03/12),
-                         gAlgoAdminSupply : reach.parseCurrency(1000),
+                         gAlgoAdminSupply : reach.parseCurrency(100000),
                     }
                 },
                 iDeployed: async (msg) => {
