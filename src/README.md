@@ -5,6 +5,16 @@ Lossless Lottery is a decentralized app launched on Algorand. This project was d
 ## Video Demo
 [Here](https://vimeo.com/742076931/9ab7bddbdb)
 
+
+## Notes
+- The smart contract was built using [Reachlang](reach.sh)
+- More explanations about how the contract works is in the video demo above
+- The reach smart contract is located [here](https://github.com/asolpshinning/lossless-lottery-gAlgo/tree/main/src/rsh)
+- The compiled javascript file from reach is [here](https://github.com/asolpshinning/lossless-lottery-gAlgo/tree/main/src/reachBackend)
+- You can easily test this when you `cd` to `src` folder and `npm run dev` the next JS project
+
+
+
 ## ABI
 ```json
 {
@@ -48,6 +58,19 @@ Lossless Lottery is a decentralized app launched on Algorand. This project was d
       ],
       "returns": { "type": "boolean", "desc": "failure or success" }
     },
+    {
+      "name": "deployContract",
+      "desc": "This just contains some information useful for Admin for what is needed to deploy the smart contract",
+      "args": [
+        { "type": "token", "name": "gAlgo", "desc": "gAlgo token ID" },
+        { "type": "Address", "name": "Manager", "desc": "Address of an admin manager for the contract (either the same or different from Creator" },
+        { "type": "UInt64", "name": "minimumForTicket", "desc": "minimum amount of gAlgo to be minted before being able to receive lottery tickets" },
+        { "type": "UInt64", "name": "weeklyPercent", "desc": "this is the percentage used to determine weekly amount of lottery rewards for winners" },
+        { "type": "UInt64", "name": "gAlgoAdminSupply", "desc": "this is the amount of gAlgo the Contract Creator pays into the contract at the launch of the contract" },
+      ],
+      "returns": { "type": "boolean", "desc": "failure or success" }
+    },
+    
   ]
 }
 ```
@@ -83,6 +106,7 @@ First, run the development server:
 First, run the development server:
 
 ```bash
+cd src
 npm run dev
 # or
 yarn dev
