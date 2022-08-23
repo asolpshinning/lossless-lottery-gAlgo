@@ -1,11 +1,56 @@
-Lossless Lottery is a decentralized app launched on Algorand. This project was done as part of August 2022 Greenhouse Hack Algorand FOundation Bounty Hack. The front end is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Lossless Lottery is a decentralized app launched on Algorand. This project was done as part of August 2022 Greenhouse Hack Algorand Foundation Bounty Hack. The front end is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 **Developed by**: [Sunday Akinbowale](https://github.com/asolpshinning)
 
 ## Video Demo
 [Here](https://vimeo.com/742076931/9ab7bddbdb)
 
-
+## ABI
+```json
+{
+  "name": "Lossless Lottery gAlgo",
+  "desc": "Smart Contract for Weekly Lottery During Algorand Governance Commitment Period",
+  "methods": [
+    {
+      "name": "mintgAlgo",
+      "desc": "mint gAlgo for Algo (1 gAlgo = 1 Algo)",
+      "args": [
+        { "type": "uint64", "desc": "Amount of gAlgo to be minted" },
+      ],
+      "returns": { "type": "boolean", "desc": "failure or success" }
+    },
+    {
+      "name": "getTickets",
+      "desc": "After you are done minting all gAlgos you want, use this to get lottery tickets",
+      "args": [
+      ],
+      "returns": { "type": "boolean", "desc": "failure or success" }
+    },
+    {
+      "name": "getRandomWinner",
+      "desc": "Only the Contract Creator or Manager can use this to get the random winning ticket",
+      "args": [
+        { "type": "uint64", "desc": "Random number the contract uses to choose the winner" },
+      ],
+      "returns": { "type": "boolean", "desc": "failure or success" }
+    },
+    {
+      "name": "claimRewards",
+      "desc": "Participators use this weekly to claim their lottery rewards if they have the winning ticket",
+      "args": [
+      ],
+      "returns": { "type": "boolean", "desc": "failure or success" }
+    },
+    {
+      "name": "startCommitmentPeriod",
+      "desc": "Only the admin uses this to start commitment period when people can no longer mint gAlgos for their Algos",
+      "args": [
+      ],
+      "returns": { "type": "boolean", "desc": "failure or success" }
+    },
+  ]
+}
+```
 ## Contract Info
 ``` javaScript
 
